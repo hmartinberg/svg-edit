@@ -12,10 +12,12 @@
 <link rel="stylesheet" href="svg-editor.css" type="text/css"/>
 <link rel="stylesheet" href="spinbtn/JQuerySpinBtn.css" type="text/css"/>
 
+<link rel="stylesheet" href="goo/svg-editor.css" type="text/css"/>
+
 <!--{if jquery_release}>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
 <!{else}-->
-  <script src="jquery.js"></script>
+	<script src="jquery.js"></script>
 <!--{endif}-->
 
 <script src="js-hotkeys/jquery.hotkeys.min.js"></script>
@@ -26,27 +28,27 @@
 <script src="touch.js"></script>
 
 <!--{if svg_edit_release}>
-  <script src="svgedit.compiled.js"></script>
+	<script src="svgedit.compiled.js"></script>
 <!{else}-->
-  <script src="svgedit.js"></script>
-  <script src="jquery-svg.js"></script>
-  <script src="contextmenu/jquery.contextMenu.js"></script>
-  <script src="browser.js"></script>
-  <script src="svgtransformlist.js"></script>
-  <script src="math.js"></script>
-  <script src="units.js"></script>
-  <script src="svgutils.js"></script>
-  <script src="sanitize.js"></script>
-  <script src="history.js"></script>
-  <script src="coords.js"></script>
-  <script src="recalculate.js"></script>
-  <script src="select.js"></script>
-  <script src="draw.js"></script>
-  <script src="path.js"></script>
-  <script src="svgcanvas.js"></script>
-  <script src="svg-editor.js"></script>
-  <script src="locale/locale.js"></script>
-  <script src="contextmenu.js"></script>
+	<script src="svgedit.js"></script>
+	<script src="jquery-svg.js"></script>
+	<script src="contextmenu/jquery.contextMenu.js"></script>
+	<script src="browser.js"></script>
+	<script src="svgtransformlist.js"></script>
+	<script src="math.js"></script>
+	<script src="units.js"></script>
+	<script src="svgutils.js"></script>
+	<script src="sanitize.js"></script>
+	<script src="history.js"></script>
+	<script src="coords.js"></script>
+	<script src="recalculate.js"></script>
+	<script src="select.js"></script>
+	<script src="draw.js"></script>
+	<script src="path.js"></script>
+	<script src="svgcanvas.js"></script>
+	<script src="svg-editor.js"></script>
+	<script src="locale/locale.js"></script>
+	<script src="contextmenu.js"></script>
 <!--{endif}-->
 
 <!-- If you do not wish to add extensions by URL, you can load them
@@ -88,7 +90,7 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 </div>
 </div>
 
-<div id="sidepanels">
+<!-- <div id="sidepanels">
 	<div id="layerpanel">
 		<h3 id="layersLabel">Layers</h3>
 		<fieldset id="layerbuttons">
@@ -113,8 +115,8 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 	</div>
 	<div id="sidepanel_handle" title="Drag left/right to resize side panel [X]">L a y e r s</div>
 </div>
-
-<div id="main_button">
+ -->
+<!-- <div id="main_button">
 	<div id="main_icon" class="tool_button" title="Main Menu">
 		<span>SVG-Edit</span>
 		<div id="logo"></div>
@@ -123,7 +125,6 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 		
 	<div id="main_menu"> 
 	
-		<!-- File-like buttons: New, Save, Source -->
 		<ul>
 			<li id="tool_clear">
 				<div></div>
@@ -173,7 +174,7 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 
 	</div>
 </div>
-
+ -->
 
 
 <div id="tools_top" class="tools_panel">
@@ -200,22 +201,25 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 			<div class="tool_sep"></div>
 			<div class="push_button" id="tool_move_top" title="Bring to Front [ Ctrl+Shift+] ]"></div>
 			<div class="push_button" id="tool_move_bottom" title="Send to Back [ Ctrl+Shift+[ ]"></div>
-			<div class="push_button" id="tool_topath" title="Convert to Path"></div>
+
+<!-- 			<div class="push_button" id="tool_topath" title="Convert to Path"></div>
 			<div class="push_button" id="tool_reorient" title="Reorient path"></div>
 			<div class="push_button" id="tool_make_link" title="Make (hyper)link"></div>
+
 			<div class="tool_sep"></div>
 			<label id="idLabel" title="Identify the element">
 				<span>id:</span>
 				<input id="elem_id" class="attr_changer" data-attr="id" size="10" type="text"/>
 			</label>
+ -->
 		</div>
 
-		<label id="tool_angle" title="Change rotation angle" class="toolset">
+<!-- 		<label id="tool_angle" title="Change rotation angle" class="toolset">
 			<span id="angleLabel" class="icon_label"></span>
 			<input id="angle" size="2" value="0" type="text"/>
 		</label>
-		
-		<div class="toolset" id="tool_blur" title="Change gaussian blur value">
+ -->		
+<!-- 		<div class="toolset" id="tool_blur" title="Change gaussian blur value">
 			<label>
 				<span id="blurLabel" class="icon_label"></span>
 				<input id="blur" size="2" value="0" type="text"/>
@@ -227,12 +231,13 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 				</ul>
 			</div>
 		</div>
-		
+ -->		
 		<div class="dropdown toolset" id="tool_position" title="Align Element to Page">
 				<div id="cur_position" class="icon_label"></div>
 				<button></button>
 		</div>		
 
+<!-- 		
 		<div id="xy_panel" class="toolset">
 			<label>
 				x: <input id="selected_x" class="attr_changer" title="Change X coordinate" size="3" data-attr="x"/>
@@ -241,8 +246,8 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 				y: <input id="selected_y" class="attr_changer" title="Change Y coordinate" size="3" data-attr="y"/>
 			</label>
 		</div>
+ -->	
 	</div>
-	
 	<!-- Buttons when multiple elements are selected -->
 	<div id="multiselected_panel">
 		<div class="tool_sep"></div>
@@ -250,7 +255,7 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 		<div class="push_button" id="tool_delete_multi" title="Delete Selected Elements [Delete/Backspace]"></div>
 		<div class="tool_sep"></div>
 		<div class="push_button" id="tool_group_elements" title="Group Elements [G]"></div>
-		<div class="push_button" id="tool_make_link_multi" title="Make (hyper)link"></div>
+		<!-- <div class="push_button" id="tool_make_link_multi" title="Make (hyper)link"></div> -->
 		<div class="push_button" id="tool_alignleft" title="Align Left"></div>
 		<div class="push_button" id="tool_aligncenter" title="Align Center"></div>
 		<div class="push_button" id="tool_alignright" title="Align Right"></div>
@@ -271,7 +276,7 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 	</div>
 
 	<div id="rect_panel">
-		<div class="toolset">
+<!-- 		<div class="toolset">
 			<label id="rect_width_tool" title="Change rectangle width">
 				<span id="rwidthLabel" class="icon_label"></span>
 				<input id="rect_width" class="attr_changer" size="3" data-attr="width"/>
@@ -281,6 +286,7 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 				<input id="rect_height" class="attr_changer" size="3" data-attr="height"/>
 			</label>
 		</div>
+ -->		
 		<label id="cornerRadiusLabel" title="Change Rectangle Corner Radius" class="toolset">
 			<span class="icon_label"></span>
 			<input id="rect_rx" size="3" value="0" type="text" data-attr="Corner Radius"/>
@@ -288,26 +294,27 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 	</div>
 
 	<div id="image_panel">
-	<div class="toolset">
-		<label><span id="iwidthLabel" class="icon_label"></span>
-		<input id="image_width" class="attr_changer" title="Change image width" size="3" data-attr="width"/>
-		</label>
-		<label><span id="iheightLabel" class="icon_label"></span>
-		<input id="image_height" class="attr_changer" title="Change image height" size="3" data-attr="height"/>
-		</label>
+<!-- 		<div class="toolset">
+			<label><span id="iwidthLabel" class="icon_label"></span>
+			<input id="image_width" class="attr_changer" title="Change image width" size="3" data-attr="width"/>
+			</label>
+			<label><span id="iheightLabel" class="icon_label"></span>
+			<input id="image_height" class="attr_changer" title="Change image height" size="3" data-attr="height"/>
+			</label>
+		</div>
+ -->		
+		<div class="toolset">
+			<label id="tool_image_url">url:
+				<input id="image_url" type="text" title="Change URL" size="35"/>
+			</label>
+			<label id="tool_change_image">
+				<button id="change_image_url" style="display:none;">Change Image</button>
+				<span id="url_notice" title="NOTE: This image cannot be embedded. It will depend on this path to be displayed"></span>
+			</label>
+		</div>
 	</div>
-	<div class="toolset">
-		<label id="tool_image_url">url:
-			<input id="image_url" type="text" title="Change URL" size="35"/>
-		</label>
-		<label id="tool_change_image">
-			<button id="change_image_url" style="display:none;">Change Image</button>
-			<span id="url_notice" title="NOTE: This image cannot be embedded. It will depend on this path to be displayed"></span>
-		</label>
-	</div>
-  </div>
 
-	<div id="circle_panel">
+<!-- 	<div id="circle_panel">
 		<div class="toolset">
 			<label id="tool_circle_cx">cx:
 			<input id="circle_cx" class="attr_changer" title="Change circle's cx coordinate" size="3" data-attr="cx"/>
@@ -322,8 +329,8 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 			</label>
 		</div>
 	</div>
-
-	<div id="ellipse_panel">
+ -->
+<!-- 	<div id="ellipse_panel">
 		<div class="toolset">
 			<label id="tool_ellipse_cx">cx:
 			<input id="ellipse_cx" class="attr_changer" title="Change ellipse's cx coordinate" size="3" data-attr="cx"/>
@@ -341,8 +348,8 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 			</label>
 		</div>
 	</div>
-
-	<div id="line_panel">
+ -->
+<!-- 	<div id="line_panel">
 		<div class="toolset">
 			<label id="tool_line_x1">x1:
 			<input id="line_x1" class="attr_changer" title="Change line's starting x coordinate" size="3" data-attr="x1"/>
@@ -360,7 +367,7 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 			</label>
 		</div>
 	</div>
-
+ -->
 	<div id="text_panel">
 		<div class="toolset">
 			<div class="tool_button" id="tool_bold" title="Bold Text [B]"><span></span>B</div>
@@ -414,14 +421,14 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 	</div>
 
 	<!-- For anchor elements -->
-	<div id="a_panel">
+<!-- 	<div id="a_panel">
 		<label id="tool_link_url" title="Set link URL (leave empty to remove)">
 			<span id="linkLabel" class="icon_label"></span>
 			<input id="link_url" type="text" size="35"/>
 		</label>	
 	</div>
-	
-	<div id="path_node_panel">
+ -->	
+<!-- 	<div id="path_node_panel">
 		<div class="tool_sep"></div>
 		<div class="tool_button push_button_pressed" id="tool_node_link" title="Link Control Points"></div>
 		<div class="tool_sep"></div>
@@ -441,6 +448,8 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 		<div class="tool_button" id="tool_openclose_path" title="Open/close sub-path"></div>
 		<div class="tool_button" id="tool_add_subpath" title="Add sub-path"></div>
 	</div>
+ -->
+
 </div> <!-- tools_top -->
 	<div id="cur_context_panel">
 		
@@ -478,7 +487,7 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 	<div id="zoom_panel" class="toolset" title="Change zoom level">
 		<label>
 		<span id="zoomLabel" class="zoom_tool icon_label"></span>
-		<input id="zoom" size="3" value="100" type="text" />
+		<!-- <input id="zoom" size="3" value="100" type="text" /> -->
 		</label>
 		<div id="zoom_dropdown" class="dropdown">
 			<button></button>
@@ -533,15 +542,15 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 					</select>
 				</label>
 
- 				<div class="stroke_tool dropdown" id="stroke_linejoin">
+				<div class="stroke_tool dropdown" id="stroke_linejoin">
 					<div id="cur_linejoin" title="Linejoin: Miter"></div>
 					<button></button>
- 				</div>
- 				
- 				<div class="stroke_tool dropdown" id="stroke_linecap">
+				</div>
+				
+				<div class="stroke_tool dropdown" id="stroke_linecap">
 					<div id="cur_linecap" title="Linecap: Butt"></div>
 					<button></button>
- 				</div>
+				</div>
 
 			</div>
 
@@ -679,7 +688,7 @@ by creating the following file and adding by calls to svgEditor.setConfig -->
 			<label><span id="svginfo_lang">Language:</span>
 				<!-- Source: http://en.wikipedia.org/wiki/Language_names -->
 				<select id="lang_select">
-				  <option id="lang_ar" value="ar">العربية</option>
+					<option id="lang_ar" value="ar">العربية</option>
 					<option id="lang_cs" value="cs">Čeština</option>
 					<option id="lang_de" value="de">Deutsch</option>
 					<option id="lang_en" value="en" selected="selected">English</option>
