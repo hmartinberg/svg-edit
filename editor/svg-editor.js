@@ -3236,11 +3236,13 @@ TO-DOS
 
 			// For slider usage, see: http://jqueryui.com/demos/slider/
 			$('#opac_slider').slider({
-				start: function() {
-					$('#opacity_dropdown li:not(.special)').hide();
+				start: function(evt) {
+					//$('#opacity_dropdown li:not(.special)').hide();
+					//evt.stopPropagation();
 				},
-				stop: function() {
-					$('#opacity_dropdown li').show();
+				stop: function(evt) {
+					//$('#opacity_dropdown li').show();
+					//evt.stopPropagation();
 					$(window).mouseup();
 				},
 				slide: function(evt, ui) {

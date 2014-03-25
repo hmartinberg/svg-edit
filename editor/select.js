@@ -24,7 +24,7 @@ if (!svgedit.select) {
 var svgFactory_;
 var config_;
 var selectorManager_; // A Singleton
-var gripRadius = svgedit.browser.isTouch() ? 10 : 4;
+var gripRadius = svgedit.browser.isTouch() ? 10 : 3;
 
 // Class: svgedit.select.Selector
 // Private class for DOM element selection boxes
@@ -55,9 +55,9 @@ svgedit.select.Selector = function(id, elem) {
 			'attr': {
 				'id': ('selectedBox' + this.id),
 				'fill': 'none',
-				'stroke': '#22C',
+				'stroke': '#888',
 				'stroke-width': '1',
-				'stroke-dasharray': '5,5',
+				'stroke-dasharray': '1,2',
 				// need to specify this so that the rect is not selectable
 				'style': 'pointer-events:none'
 			}
@@ -183,8 +183,8 @@ svgedit.select.Selector.prototype.resize = function() {
 
 	var nbox = svgedit.math.transformBox(l*current_zoom, t*current_zoom, w*current_zoom, h*current_zoom, m),
 		aabox = nbox.aabox,
-		nbax = aabox.x - offset,
-		nbay = aabox.y - offset,
+		nbax = aabox.x - offset -.5,
+		nbay = aabox.y - offset -.5,
 		nbaw = aabox.width + (offset * 2),
 		nbah = aabox.height + (offset * 2);
 
@@ -247,8 +247,8 @@ svgedit.select.Selector.prototype.resize = function() {
 		var dir;
 		for (dir in this.gripCoords) {
 			var coords = this.gripCoords[dir];
-			selectedGrips[dir].setAttribute('cx', coords[0]);
-			selectedGrips[dir].setAttribute('cy', coords[1]);
+			selectedGrips[dir].setAttribute('x', coords[0]-1.5);
+			selectedGrips[dir].setAttribute('y', coords[1]-1.5);
 		}
 
 		// we want to go 20 pixels in the negative transformed y direction, ignoring scale
@@ -326,11 +326,14 @@ svgedit.select.SelectorManager.prototype.initGroup = function() {
 	var dir;
 	for (dir in this.selectorGrips) {
 		var grip = svgFactory_.createSVGElement({
-			'element': 'circle',
+			'element': 'rect',
 			'attr': {
 				'id': ('selectorGrip_resize_' + dir),
-				'fill': '#22C',
-				'r': gripRadius,
+				'fill': '#888',
+				// x:-gripRadius/2,
+				// y:-gripRadius/2,
+				height:'3',
+				width:'3',
 				'style': ('cursor:' + dir + '-resize'),
 				// This expands the mouse-able area of the grips making them
 				// easier to grab with the mouse.
@@ -352,7 +355,7 @@ svgedit.select.SelectorManager.prototype.initGroup = function() {
 			'element': 'line',
 			'attr': {
 				'id': ('selectorGrip_rotateconnector'),
-				'stroke': '#22C',
+				'stroke': '#222',
 				'stroke-width': '1'
 			}
 		})
@@ -363,10 +366,10 @@ svgedit.select.SelectorManager.prototype.initGroup = function() {
 			'element': 'circle',
 			'attr': {
 				'id': 'selectorGrip_rotate',
-				'fill': 'lime',
+				'fill': '#888',
 				'r': gripRadius,
-				'stroke': '#22C',
-				'stroke-width': 2,
+				'stroke': '#222',
+				'stroke-width': 1,
 				'style': 'cursor:url(' + config_.imgPath + 'rotate.png) 12 12, auto;'
 			}
 		})
