@@ -1755,6 +1755,50 @@ TO-DOS
 				} else {
 					$('#selLayerNames').attr('disabled', 'disabled');
 				}
+
+				// TODO move
+				$.fn.editable = function(get, set) {
+					var $this = $(this);
+					var data = $this.data('editable');
+					if (data && data.get) {
+						// Just update
+						$this.val(data.get());
+					}
+					else {
+						$this.data('editable', {get:get, set:set});
+						$this.val(get())
+						.blur(function(){
+							set($this.val());
+						})
+						.keydown(function(e){
+							if (e.keyCode === 13) {
+								set($this.val());
+								$this.blur()
+							}
+							else if (e.keyCode === 27) {
+								$this.val(get());
+								$this.blur();
+							}
+						});						
+					}
+					return $this;
+				}
+
+				// var res = svgCanvas.getResolution();
+
+				$('#canvas_height').editable(
+					function(){return svgCanvas.getResolution().h;},
+					function(v) {
+						svgCanvas.setResolution(svgCanvas.getResolution().w, v);
+					}
+				);
+				$('#canvas_width').editable(
+					function(){return svgCanvas.getResolution().w;},
+					function(v) {
+						svgCanvas.setResolution(v, svgCanvas.getResolution().h);
+					}
+				);
+
 			};
 
 			var updateWireFrame = function() {
